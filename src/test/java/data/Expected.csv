@@ -1,0 +1,5 @@
+message,cod,city_id,calctime,cnt,list_dt,list_main_temp,list_main_temp_min,list_main_temp_max,list_main_pressure,list_main_sea_level,list_main_grnd_level,list_main_humidity,list_wind_speed,list_wind_deg,list_clouds_all,list_weather_id,list_weather_main,list_weather_description,list_weather_icon,list_rain_3h
+"","200",2643743.0,0.0875,3.0,1.485717216E9,279.946,279.946,279.946,1016.76,1024.45,1016.76,100.0,4.59,163.001,92.0,500.0,"Rain","light rain","10n",2.69
+"","200",2643743.0,0.0875,3.0,1.485745061E9,282.597,282.597,282.597,1012.12,1019.71,1012.12,98.0,4.04,226.0,92.0,500.0,"Rain","light rain","10n",0.405
+"","200",2643743.0,0.0875,3.0,1.485768552E9,279.38,278.15,280.15,1011.0,,,93.0,2.6,30.0,90.0,701.0,"Mist","mist","50d",
+"","200",2643743.0,0.0875,3.0,1.485768552E9,279.38,278.15,280.15,1011.0,,,93.0,2.6,30.0,90.0,741.0,"Fog","fog","50d",
