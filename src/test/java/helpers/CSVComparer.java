@@ -23,15 +23,28 @@ public class CSVComparer {
 	        Scanner scannerExpected = new Scanner(new File(CSVExpected));
 	        FileWriter fileWriter = new FileWriter(CSVResults);
 
-
-	        while (scannerExpected.hasNext()) {
-	            List<String> lineExpected = parseLine(scannerExpected.nextLine());
-	            List<String> lineActual = parseLine(scannerActual.nextLine());
-	            String resultString = lineExpected.get(0) + ", " + lineActual.get(0);
+            int line = 0;
+            List<String> lineExpected = null;
+        	List<String> lineActual = null;
+        	String resultString;
+	        while (scannerExpected.hasNext()) {	
+	        	lineExpected = parseLine(scannerExpected.nextLine());
+	            lineActual = parseLine(scannerActual.nextLine());
+	            if(line == 0) {
+	            resultString = "Expected_" + lineExpected.get(0).toString() + ", " +"Actual_"+ lineActual.get(0).toString();
 	            for(int lineCount = 1 ; lineCount < lineExpected.size(); lineCount++) {
-	            	System.out.println(lineExpected.get(lineCount));
-	            	System.out.println(lineActual.get(lineCount));
-	                resultString = resultString + "," + lineExpected.get(lineCount) + ", " + lineActual.get(lineCount);
+	            	System.out.println(lineExpected.get(lineCount).toString());
+	            	System.out.println(lineActual.get(lineCount).toString());
+	                resultString = resultString + "," + "Expected_" + lineExpected.get(lineCount).toString() + ", " + "Actual_" +lineActual.get(lineCount).toString();
+	                line = line + 1;
+	            }
+	            } else {
+	            resultString = lineExpected.get(0).toString() + ", " + lineActual.get(0).toString();
+	            for(int lineCount = 1 ; lineCount < lineExpected.size(); lineCount++) {
+	            	System.out.println(lineExpected.get(lineCount).toString());
+	            	System.out.println(lineActual.get(lineCount).toString());
+	                resultString = resultString + ","  + lineExpected.get(lineCount).toString() + ", " + lineActual.get(lineCount).toString();
+	            }
 	            }
 	            fileWriter.append(resultString);
 	            fileWriter.append('\n'); 
